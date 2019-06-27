@@ -5,7 +5,7 @@
   "scripts": {
     "start": "mdx-deck deck.mdx",
     "build:deck": "mdx-deck build deck.mdx",
-    "copy": "cpx \"images/**/*.{gif,png,jpg}\" dist/images",
+    "copy": "cpx \"images/**/*.{gif,png,jpg,svg}\" dist/images",
     "build": "yarn build:deck && yarn copy"
   },
   "private": true,
