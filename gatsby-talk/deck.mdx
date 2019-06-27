@@ -1,0 +1,132 @@
+import { Invert, Split } from '@mdx-deck/layouts';
+import { Notes } from '@mdx-deck/components';
+import GatsbyBg from './components/gatsby-bg';
+import Steps from './components/steps';
+
+<GatsbyBg>
+
+# Make Fast Site with <br /> Gatsby JS
+
+</GatsbyBg>
+
+---
+
+## The Problem
+
+---
+
+### Monolithic CMS no longer sufficient.
+
+<img src="/images/content-mesh-labeled.png" style={{ maxWidth: '50%' }} />
+
+---
+
+### Getting performance right is hard.
+
+<Split>
+  <img src="/images/performance-checklist.png" style={{ maxWidth: '80%' }} />
+    <div style={{ textAlign: 'left', fontSize: '2rem' }}>
+    <p>
+        <small>1. Establish a performance culture.</small>
+    </p>
+    <p>
+        <small>...</small>
+    </p>
+    <p>
+        <small>62. Is continuous monitoring set up?</small>
+    </p>
+    </div>
+
+</Split>
+
+---
+
+<Invert>
+
+<blockquote>
+
+Avoid doing at runtime what you can do <br /> at design/build time.
+
+<p style={{textAlign:'right', textDecoration: 'line-through' }}><small>Somebody</small></p>
+
+</blockquote>
+
+</Invert>
+
+---
+
+<img src="/images/gatsbyjs.svg" alt="" style={{ width: 100, height: 100 }} />
+
+---
+
+<GatsbyBg>
+
+Gatsby **aggregates data** with GraphQL.
+
+</GatsbyBg>
+
+---
+
+<img src="/images/aggregate-data.png" style={{ width: '50%' }} />
+
+---
+
+<Steps>
+  <div>
+    <h5>
+      Example: Gatsby's <a href="https://store.gatsbyjs.org/">Swag Store</a>
+    </h5>
+    <img src="/images/store.jpg" style={{ width: '50%' }} />
+  </div>
+  <div>
+    <p>
+      Static Data Loaded at <b>Build</b> Time
+    </p>
+    <img src="/images/store-static-data.jpg" style={{ width: '50%' }} />
+  </div>
+  <div>
+    <p>
+      Dynamic Data Loaded at <b>Run</b> Time
+    </p>
+    <img src="/images/store-dynamic-data.jpg" style={{ width: '50%' }} />
+  </div>
+  <div>
+    <p>
+      <b>Client-Only</b> Routes for User Pages
+    </p>
+    <img src="/images/store-dashboard.jpg" style={{ width: '50%' }} />
+  </div>
+  <div>
+    <p>
+      <b>Client-Only</b> Routes for User Pages
+    </p>
+    <img src="/images/store-dashboard-data.jpg" style={{ width: '50%' }} />
+  </div>
+</Steps>
+
+---
+
+<GatsbyBg>
+
+Gatsby sets **the right defaults** for performance.
+
+- Follows the PRPL pattern (push, render, pre-cache, lazy-load) and other performance best practices
+- Generates only static assets (no server required)
+- Optimizes and lazy-loads assets
+
+</GatsbyBg>
+
+---
+
+## Demo
+
+<Notes>
+
+1. load home page with slow network
+   - image
+   - pre-cache
+   - hydrate to react app
+1. load home page with IE disable javascript
+1. comment with GitHub issue
+
+</Notes>

@@ -1,0 +1,17 @@
+{
+  "name": "gatsby-talk",
+  "version": "1.0.0",
+  "author": "Malcolm Kee <malcolm.keeweesiong@gmail.com>",
+  "scripts": {
+    "start": "mdx-deck deck.mdx",
+    "build:deck": "mdx-deck build deck.mdx",
+    "copy": "cpx \"images/**/*.{gif,png,jpg}\" dist/images",
+    "build": "yarn build:deck && yarn copy"
+  },
+  "private": true,
+  "devDependencies": {
+    "cpx": "^1.5.0",
+    "mdx-deck": "^2.4.0"
+  },
+  "license": "MIT"
+}
