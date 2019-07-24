@@ -1,0 +1,19 @@
+{
+  "name": "a11y",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "mdx-deck deck.mdx"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "mdx-deck": "^3.0.7"
+  },
+  "dependencies": {
+    "rebass": "^3.1.2",
+    "styled-components": "^4.3.2"
+  }
+}
