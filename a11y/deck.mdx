@@ -6,6 +6,7 @@ import ContentSlide from './components/content-slide';
 import FullScreen from './components/full-screen-container';
 import MouseStick from './components/mouse-stick';
 import MsVideo from './components/ms-video';
+import Profile from './components/profile';
 import ScreenReader from './components/screen-reader';
 
 export const theme = swiss;
@@ -16,12 +17,23 @@ export const theme = swiss;
 
 <ContentSlide>
 
+<Flex>
+
+<Box width={1/2}>
+
 ## Facilitator Profile
 
 ### Malcolm Kee
 
 1. Web UI Programmer
 1. Ex-IT Consultant at Accenture
+
+</Box>
+<Box width={1/2} p={4}>
+  <Profile />
+</Box>
+
+</Flex>
 
 </ContentSlide>
 
