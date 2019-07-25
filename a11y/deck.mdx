@@ -2,7 +2,10 @@ import { swiss } from '@mdx-deck/themes';
 import { Flex, Heading, Text, Box, Image, Card } from 'rebass';
 import BlackBg from './components/black-bg';
 import ContentSlide from './components/content-slide';
-import TypeOfDisability from './components/type-of-disability';
+import FullScreen from './components/full-screen-container';
+import MouseStick from './components/mouse-stick';
+import MsVideo from './components/ms-video';
+import ScreenReader from './components/screen-reader';
 
 export const theme = swiss;
 
@@ -23,9 +26,9 @@ export const theme = swiss;
 
 ---
 
-## TODO: Icebreaker
+## Activity
 
-Do Something Without Hand
+No Talk 🙊, No Mouse 🐭
 
 ---
 
@@ -42,12 +45,16 @@ By the end of this presentation, you will able to:
 
 ---
 
+<ContentSlide>
+
 ## Contents
 
 1. What is Software Accessibility?
 1. How Disabled People use Software
 1. Good & Bad Software Accessibility
 1. Why It Matters?
+
+</ContentSlide>
 
 ---
 
@@ -59,7 +66,7 @@ By the end of this presentation, you will able to:
 
 ---
 
-### Accessibility is the _design & development_ of product/services so that _people with disabilities_ can use them.
+### Accessibility is <br />the _design & development_ of product/services so that <br /> _people with disabilities_ can use them.
 
 ---
 
@@ -68,6 +75,26 @@ By the end of this presentation, you will able to:
 # How disabled people use software
 
 </BlackBg>
+
+---
+
+<FullScreen>
+  <Flex alignItems="center" justifyContent="center">
+    <Box>
+      <ScreenReader />
+    </Box>
+  </Flex>
+</FullScreen>
+
+---
+
+<FullScreen>
+  <Flex alignItems="center" justifyContent="center">
+    <Box>
+      <MouseStick />
+    </Box>
+  </Flex>
+</FullScreen>
 
 ---
 
@@ -84,6 +111,22 @@ By the end of this presentation, you will able to:
 # Why It Matters
 
 </BlackBg>
+
+---
+
+<MsVideo />
+
+---
+
+<ContentSlide>
+
+## Summary
+
+1. **Accessibility**: how easy the produce/service can be used by people with disabilities
+2. Disabled people use **assistive technologies** to use software.
+3. Accessibility of software is important for an **inclusive society**.
+
+</ContentSlide>
 
 ---
 
