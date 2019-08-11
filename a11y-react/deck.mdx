@@ -1,13 +1,14 @@
 import { swiss } from '@mdx-deck/themes';
-import { Notes } from 'mdx-deck';
-import { Flex, Heading, Text, Box, Image, Card } from 'rebass';
+import { Notes, Image, Invert } from 'mdx-deck';
+import { Flex, Heading, Text, Box, Card } from 'rebass';
 import BlackBg from './components/black-bg';
 import ContentSlide from './components/content-slide';
 import FullScreen from './components/full-screen-container';
-import MouseStick from './components/mouse-stick';
 import MsVideo from './components/ms-video';
+import TypeOfDisability from './components/type-of-disability';
 import Profile from './components/profile';
-import ScreenReader from './components/screen-reader';
+import ScreenReaderImg from './static/images/screen-reader.jpg';
+import MouseStickImg from './static/images/mouse-stick.jpg';
 
 export const theme = swiss;
 
@@ -17,57 +18,12 @@ export const theme = swiss;
 
 <ContentSlide>
 
-<Flex>
-
-<Box width={1/2}>
-
-## Facilitator Profile
-
-### Malcolm Kee
-
-1. Web UI Programmer
-1. Ex-IT Consultant at Accenture
-
-</Box>
-<Box width={1/2} p={4}>
-  <Profile />
-</Box>
-
-</Flex>
-
-</ContentSlide>
-
----
-
-## Activity
-
-No Talk 🙊, No Mouse 🐭
-
-<Notes>Allocated times: 1 m</Notes>
-
----
-
-<ContentSlide>
-
-## Learning Outcomes
-
-By the end of this presentation, you will able to:
-
-1. describe what is software accessibility according to Web Accessibility Initiative
-1. justify the importance of software accessibility to promote inclusivity
-
-</ContentSlide>
-
----
-
-<ContentSlide>
-
 ## Contents
 
+1. Why Accessibility?
 1. What is Software Accessibility?
 1. How Disabled People use Software
 1. Good & Bad Software Accessibility
-1. Why It Matters?
 
 </ContentSlide>
 
@@ -75,13 +31,31 @@ By the end of this presentation, you will able to:
 
 <BlackBg>
 
-# What is Software Accessibility?
+# Why?
 
 </BlackBg>
 
 ---
 
+<MsVideo />
+
+---
+
+<Invert>
+
+# What is Software Accessibility?
+
+</Invert>
+
+---
+
 > Accessibility is <br />the _design & development_ of product/services so that <br /> _people with disabilities_ can use them.
+
+---
+
+<FullScreen>
+  <TypeOfDisability />
+</FullScreen>
 
 ---
 
@@ -93,23 +67,11 @@ By the end of this presentation, you will able to:
 
 ---
 
-<FullScreen>
-  <Flex alignItems="center" justifyContent="center">
-    <Box>
-      <ScreenReader />
-    </Box>
-  </Flex>
-</FullScreen>
+<Image src={ScreenReaderImg} />
 
 ---
 
-<FullScreen>
-  <Flex alignItems="center" justifyContent="center">
-    <Box>
-      <MouseStick />
-    </Box>
-  </Flex>
-</FullScreen>
+<Image src={MouseStickImg} />
 
 ---
 
@@ -118,18 +80,6 @@ By the end of this presentation, you will able to:
 # Good & Bad Software Accessibility
 
 </BlackBg>
-
----
-
-<BlackBg>
-
-# Why It Matters
-
-</BlackBg>
-
----
-
-<MsVideo />
 
 ---
 
