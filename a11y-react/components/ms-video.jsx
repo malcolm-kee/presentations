@@ -5,9 +5,13 @@ import videoSrc from './ms_accessibility.mp4';
 import FullScreen from './full-screen-container';
 
 export default function MsVideo() {
+  const [isMounted, setIsMounted] = React.useState(false);
+
+  React.useLayoutEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   return (
-    <FullScreen>
-      <Video autoPlay src={videoSrc} />
-    </FullScreen>
+    <FullScreen>{isMounted && <Video autoPlay src={videoSrc} />}</FullScreen>
   );
 }
