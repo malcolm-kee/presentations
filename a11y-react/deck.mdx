@@ -3,13 +3,16 @@ import { Notes, Image } from 'mdx-deck';
 import { Flex, Heading, Text, Box, Card } from 'rebass';
 import BlackBg from './components/black-bg';
 import ContentSlide from './components/content-slide';
+import DecisionsGradient from './components/decisions-gradient';
 import FullScreen from './components/full-screen-container';
 import MsVideo from './components/ms-video';
-import TypeOfDisability from './components/type-of-disability';
-import TypeOfDisabilityImage from './components/type-of-disability.png';
+import PermissionQuote from './components/permission-quote';
 import Profile from './components/profile';
-import ScreenReaderImg from './static/images/screen-reader.jpg';
+import TypeOfDisability from './components/type-of-disability';
+
+import KeyboardImg from './static/images/keyboard.jpg';
 import MouseStickImg from './static/images/mouse-stick.jpg';
+import ScreenReaderImg from './static/images/screen-reader.jpg';
 
 export const theme = swiss;
 
@@ -17,28 +20,12 @@ export const theme = swiss;
 
 ---
 
-<ContentSlide>
-
 ## Contents
 
+1. What is Accessibility?
 1. Why Accessibility?
-1. What is Software Accessibility?
 1. How Disabled People use Software
-1. Good & Bad Software Accessibility
-
-</ContentSlide>
-
----
-
-<BlackBg>
-
-# Why?
-
-</BlackBg>
-
----
-
-<MsVideo />
+1. What can you do?
 
 ---
 
@@ -54,6 +41,18 @@ export const theme = swiss;
 
 1. the qualities that make an experience open to all
 1. a professional discipline aimed at achieving no. 1
+
+---
+
+<BlackBg>
+
+# Why?
+
+</BlackBg>
+
+---
+
+<MsVideo />
 
 ---
 
@@ -73,6 +72,10 @@ export const theme = swiss;
 
 ---
 
+<Image src={KeyboardImg} />
+
+---
+
 <Image src={ScreenReaderImg} />
 
 ---
@@ -83,39 +86,50 @@ export const theme = swiss;
 
 <BlackBg>
 
-# Good & Bad Software Accessibility
+# What can you do?
 
 </BlackBg>
 
 ---
 
-<ContentSlide>
+## Use Accessible Components
 
-## Summary
-
-1. **Accessibility**: how easy the produce/service can be used by all people
-2. Disabled people use **assistive technologies** to use software.
-3. Accessibility of software is important for an **inclusive society**.
-
-</ContentSlide>
+- [Reach UI](https://ui.reach.tech/)
+- [Reakit](https://reakit.io/)
 
 ---
 
-<ContentSlide>
+## Let button be `button`
 
-## Review Outcomes
+HTML is your friend
 
-By now, you will able to:
+---
 
-1. describe what is software accessibility according to Web Accessibility Initiative
-1. justify the importance of software accessibility to promote inclusivity
+## Automate a11y checking
 
-</ContentSlide>
+- `eslint-plugin-jsx-a11y`
+- `cypress-axe`
+
+---
+
+## Test with Keyboard
+
+Aren't you obsessed with working without mouse?
 
 ---
 
 <BlackBg>
 
-# Q & A
+# I get you Malcolm.
+
+# But, my boss won't let me...
 
 </BlackBg>
+
+---
+
+<DecisionsGradient />
+
+---
+
+<PermissionQuote />
