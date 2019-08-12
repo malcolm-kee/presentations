@@ -1,18 +1,19 @@
 import { swiss } from '@mdx-deck/themes';
-import { Notes, Image, Invert } from 'mdx-deck';
+import { Notes, Image } from 'mdx-deck';
 import { Flex, Heading, Text, Box, Card } from 'rebass';
 import BlackBg from './components/black-bg';
 import ContentSlide from './components/content-slide';
 import FullScreen from './components/full-screen-container';
 import MsVideo from './components/ms-video';
 import TypeOfDisability from './components/type-of-disability';
+import TypeOfDisabilityImage from './components/type-of-disability.png';
 import Profile from './components/profile';
 import ScreenReaderImg from './static/images/screen-reader.jpg';
 import MouseStickImg from './static/images/mouse-stick.jpg';
 
 export const theme = swiss;
 
-# Software for Disabled: Accessibility ♿
+# Software for All: Accessibility ♿
 
 ---
 
@@ -41,21 +42,26 @@ export const theme = swiss;
 
 ---
 
-<Invert>
+<BlackBg>
 
 # What is Software Accessibility?
 
-</Invert>
+</BlackBg>
 
 ---
 
-> Accessibility is <br />the _design & development_ of product/services so that <br /> _people with disabilities_ can use them.
+## Accessibility:
+
+1. the qualities that make an experience open to all
+1. a professional discipline aimed at achieving no. 1
 
 ---
 
-<FullScreen>
-  <TypeOfDisability />
-</FullScreen>
+<TypeOfDisability />
+
+---
+
+# Solve for one, extend to many
 
 ---
 
@@ -87,7 +93,7 @@ export const theme = swiss;
 
 ## Summary
 
-1. **Accessibility**: how easy the produce/service can be used by people with disabilities
+1. **Accessibility**: how easy the produce/service can be used by all people
 2. Disabled people use **assistive technologies** to use software.
 3. Accessibility of software is important for an **inclusive society**.
 
