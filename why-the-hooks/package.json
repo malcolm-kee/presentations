@@ -1,0 +1,12 @@
+{
+  "name": "why-the-hooks",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "mdx-deck deck.mdx"
+  },
+  "devDependencies": {
+    "mdx-deck": "^3.0.10"
+  }
+}
