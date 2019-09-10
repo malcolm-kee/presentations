@@ -10,7 +10,64 @@ Knowing the history helps us to know why hook is introduced by seeing the limita
 
 ---
 
+```jsx
+class Switch extends React.Component {
+  state = {
+    on: false
+  };
+
+  handleToggle = () => this.setState(prevState => ({ on: !prevState.on }));
+
+  render() {
+    return (
+      <div>
+        {this.state.on ? 'On' : 'Off'}
+        <button onClick={this.handleToggle}>Toggle</button>
+      </div>
+    );
+  }
+}
+```
+
+---
+
 ## Ver 1: Mixin
+
+---
+
+Something
+
+```jsx
+import createReactClass from 'create-react-class';
+
+const ToggleMixin = {
+  getInitialState: function() {
+    return { on: false };
+  },
+  handleToggle: function() {
+    this.setState(prevState => ({ on: !prevState.on }));
+  }
+};
+
+const Switch = createReactClass({
+  mixins: [ToggleMixin],
+  render: function() {
+    return (
+      <div>
+        {this.state.on ? 'On' : 'Off'}
+        <button onClick={this.handleToggle}>Toggle</button>
+      </div>
+    );
+  }
+});
+```
+
+---
+
+Mixin starts to breakdown when you have many mixins:
+
+- name clashing
+- hard to trace where a state/methods comes from
 
 ---
 
