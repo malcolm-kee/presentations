@@ -35,6 +35,29 @@ class Switch extends React.Component {
 
 ---
 
+```jsx
+import createReactClass from 'create-react-class';
+
+const Switch = createReactClass({
+  getInitialState: function() {
+    return { on: false };
+  },
+  handleToggle: function() {
+    this.setState(prevState => ({ on: !prevState.on }));
+  },
+  render: function() {
+    return (
+      <div>
+        {this.state.on ? 'On' : 'Off'}
+        <button onClick={this.handleToggle}>Toggle</button>
+      </div>
+    );
+  }
+});
+```
+
+---
+
 Something
 
 ```jsx
@@ -68,6 +91,7 @@ Mixin starts to breakdown when you have many mixins:
 
 - name clashing
 - hard to trace where a state/methods comes from
+- and it is no longer supported officially when `createReactClass` is deprecated.
 
 ---
 
@@ -75,4 +99,163 @@ Mixin starts to breakdown when you have many mixins:
 
 ---
 
+```jsx
+class Switch extends React.Component {
+  state = {
+    on: false
+  };
+
+  handleToggle = () => this.setState(prevState => ({ on: !prevState.on }));
+
+  render() {
+    return (
+      <div>
+        {this.state.on ? 'On' : 'Off'}
+        <button onClick={this.handleToggle}>Toggle</button>
+      </div>
+    );
+  }
+}
+```
+
+---
+
+```jsx
+class Switch extends React.Component {
+  state = {
+    on: false
+  };
+
+  handleToggle = () => this.setState(prevState => ({ on: !prevState.on }));
+
+  renderUi = ({ on, handleToggle }) => (
+    <div>
+      {on ? 'On' : 'Off'}
+      <button onClick={handleToggle}>Toggle</button>
+    </div>
+  );
+
+  render() {
+    return this.renderUi({ on: this.state.on, handleToggle: this.handleToggle });
+  }
+}
+```
+
+---
+
+```jsx
+class Toggle extends React.Component {
+  state = {
+    on: false
+  };
+
+  handleToggle = () => this.setState(prevState => ({ on: !prevState.on }));
+
+  render() {
+    return this.props.render({ on: this.state.on, handleToggle: this.handleToggle });
+  }
+}
+
+const Switch = () => (
+  <Toggle
+    render={({ on, handleToggle }) => (
+      <div>
+        {on ? 'On' : 'Off'}
+        <button onClick={handleToggle}>Toggle</button>
+      </div>
+    )}
+  />
+);
+```
+
+---
+
+Render props has its drawback too:
+
+1. It is unintuitive.
+1. Nested component tree when you compose multiple render-props.
+
+---
+
 ## Ver 3 (Now): Hooks
+
+---
+
+```jsx
+class Switch extends React.Component {
+  state = {
+    on: false
+  };
+
+  handleToggle = () => this.setState(prevState => ({ on: !prevState.on }));
+
+  render() {
+    return (
+      <div>
+        {this.state.on ? 'On' : 'Off'}
+        <button onClick={this.handleToggle}>Toggle</button>
+      </div>
+    );
+  }
+}
+```
+
+---
+
+```jsx
+const Switch = () => {
+  const [on, setOn] = React.useState(false);
+
+  handleToggle = () => setOn(prevOn => !prevOn);
+
+  return (
+    <div>
+      {on ? 'On' : 'Off'}
+      <button onClick={handleToggle}>Toggle</button>
+    </div>
+  );
+};
+```
+
+---
+
+```jsx
+const useToggle = () => {
+  const [on, setOn] = React.useState(false);
+
+  handleToggle = () => setOn(prevOn => !prevOn);
+
+  return [on, handleToggle];
+};
+
+const Switch = () => {
+  const [on, toggle] = useToggle();
+
+  return (
+    <div>
+      {on ? 'On' : 'Off'}
+      <button onClick={handleToggle}>Toggle</button>
+    </div>
+  );
+};
+```
+
+---
+
+Hooks are:
+
+1. more intuitive. It's just function calls.
+1. no more nested component trees.
+1. no downsides of mixin because you control how the hooks are composed (you assign the variable for hooks returned).
+
+---
+
+## Summary
+
+---
+
+- mixins are easier to use and intuitive, but you may have name crashing and those bugs are hard to debug
+- render props composes stateful logic cleanly, but it is unintuitive and hard to read
+- hooks give the best of both worlds: intuitive and clean composition.
+
+---
