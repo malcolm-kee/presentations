@@ -1,16 +1,38 @@
+import { Head, Notes } from 'mdx-deck';
+
+<Head>
+  <title>Why The Hook</title>
+</Head>
+
 # Why The Hook
 
-Evolution of React Composition
+Evolution of Stateful Logic Composition in React
+
+<Notes>
+
+- Stateful logic means state + behavior.
+- An example is making API call.
+
+</Notes>
 
 ---
 
-## Why Evolution?
+## Why This Talk?
 
-Knowing the history helps us to know why hook is introduced by seeing the limitations of previous approaches of composition in React.
+- ~~because I like to talk.~~
+- know the drawbacks of previous approaches and how hooks overcome all of them
+- aware of old patterns that may still exist in React codebase
 
 ---
 
-[Live coding](https://codesandbox.io/s/why-the-hook-practice-hzy8r)
+[Code Example](https://codesandbox.io/s/why-the-hook-practice-hzy8r)
+
+<Notes>
+
+- explain the example
+- highlight the example is purposely simple to make it easy to understand, but it can actually applies to complex stateful logic
+
+</Notes>
 
 ---
 
@@ -24,9 +46,9 @@ Knowing the history helps us to know why hook is introduced by seeing the limita
 
 Mixin starts to breakdown when you have many mixins:
 
-- name clashing
-- hard to trace where a state/methods comes from
-- and it is no longer supported officially when `createReactClass` is deprecated.
+1. name clashing
+1. you can't use same mixin twice in a sample component
+1. hard to trace where a state/methods comes from
 
 ---
 
@@ -35,6 +57,14 @@ Mixin starts to breakdown when you have many mixins:
 ---
 
 (Live Code)
+
+---
+
+Render props overcomes some shortcomings of mixins:
+
+1. no more name-clashing, you name the injected parameter as you wish
+1. you can use same render props twice in a sample component
+1. the state/callback are traceable now.
 
 ---
 
@@ -57,7 +87,7 @@ Hooks are:
 
 1. more intuitive. It's just function calls.
 1. no more nested component trees.
-1. no downsides of mixin because you control how the hooks are composed (you assign the variable for hooks returned).
+1. no downsides of mixin because you control how the hooks are composed.
 
 ---
 
